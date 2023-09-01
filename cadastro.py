@@ -45,7 +45,7 @@ def cadastro(id_generator):
 
         create_userdata_serial = json.dumps(create_userdata)
 
-        response = requests.put(f'https://teste-estudos-4706a-default-rtdb.firebaseio.com/user-data/{user_id}.json', data=create_userdata_serial)
+        response = requests.put(f'"SEU URL AQUI"/user-data/{user_id}.json', data=create_userdata_serial)
 
         if response.status_code == 200:
             print(f"Cadastro realizado com sucesso! ID local gerado: {user_id}")
@@ -63,7 +63,7 @@ def check_by_id():
         if id_a_procurar == 'q':
             break
         
-        url = f'https://teste-estudos-4706a-default-rtdb.firebaseio.com/user-data/{id_a_procurar}.json'
+        url = f'"SEU URL AQUI"/user-data/{id_a_procurar}.json'
         response = requests.get(url, verify=False)  # Desativa a verificação do certificado SSL, sim, não é seguro, mas é para testes então tudo ok
 
         if response.status_code == 200:
